@@ -1,5 +1,4 @@
 import heroBg from './assets/hero-bg.png'
-
 import { motion } from 'framer-motion'
 import { FaDiscord } from 'react-icons/fa'
 
