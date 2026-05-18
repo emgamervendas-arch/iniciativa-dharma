@@ -24,7 +24,7 @@ export default function RecruitForm() {
     try {
 
       const response = await fetch(
-        'https://trpdemiranda07.app.n8n.cloud/webhook-test/aion2-recruit',
+        'https://trpdemiranda07.app.n8n.cloud/webhook/aion2-recruit',
         {
           method: 'POST',
           headers: {
