@@ -4,7 +4,7 @@ export default function RecruitForm() {
 
   const [formData, setFormData] = useState({
     nickname: '',
-    playerClass: '',
+    playclass: '',
     discord: '',
     region: '',
     playstyle: '',
@@ -36,6 +36,17 @@ export default function RecruitForm() {
 
       if (response.ok) {
         alert('Application sent successfully!')
+
+        setFormData({
+          nickname: '',
+          playclass: '',
+          discord: '',
+          region: '',
+          playstyle: '',
+          experience: '',
+        })
+      } else {
+        alert('Failed to send application')
       }
 
     } catch (error) {
@@ -60,12 +71,14 @@ export default function RecruitForm() {
           type="text"
           name="nickname"
           placeholder="Nickname"
+          value={formData.nickname}
           onChange={handleChange}
           className="bg-black/40 border border-cyan-500/20 rounded-xl p-4 outline-none"
         />
 
         <select
-          name="playerClass"
+          name="playclass"
+          value={formData.playclass}
           onChange={handleChange}
           className="bg-black/40 border border-cyan-500/20 rounded-xl p-4 outline-none"
         >
@@ -84,12 +97,14 @@ export default function RecruitForm() {
           type="text"
           name="discord"
           placeholder="Discord"
+          value={formData.discord}
           onChange={handleChange}
           className="bg-black/40 border border-cyan-500/20 rounded-xl p-4 outline-none"
         />
 
         <select
           name="region"
+          value={formData.region}
           onChange={handleChange}
           className="bg-black/40 border border-cyan-500/20 rounded-xl p-4 outline-none"
         >
@@ -101,6 +116,7 @@ export default function RecruitForm() {
 
         <select
           name="playstyle"
+          value={formData.playstyle}
           onChange={handleChange}
           className="bg-black/40 border border-cyan-500/20 rounded-xl p-4 outline-none"
         >
@@ -115,6 +131,7 @@ export default function RecruitForm() {
           name="experience"
           placeholder="Tell us about your MMO experience..."
           rows="5"
+          value={formData.experience}
           onChange={handleChange}
           className="bg-black/40 border border-cyan-500/20 rounded-xl p-4 outline-none resize-none"
         />
